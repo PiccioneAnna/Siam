@@ -21,3 +21,4 @@ C:\Users\flash\Source\Repos\Siam\Siam\obj\Debug\netcoreapp3.1\Siam.csproj.CopyCo
 C:\Users\flash\Source\Repos\Siam\Siam\obj\Debug\netcoreapp3.1\Siam.dll
 C:\Users\flash\Source\Repos\Siam\Siam\obj\Debug\netcoreapp3.1\Siam.pdb
 C:\Users\flash\Source\Repos\Siam\Siam\obj\Debug\netcoreapp3.1\Siam.genruntimeconfig.cache
+C:\Users\flash\source\repos\Siam\Siam\bin\Debug\netcoreapp3.1\Content\eye.xnb

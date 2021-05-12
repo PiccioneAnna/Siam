@@ -6,8 +6,25 @@ namespace Siam
 {
     public class Game1 : Game
     {
+        #region All Variables/Fields
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
+
+        //Border positions
+        private int maxX;
+        private int maxY;
+
+        //Tile Sizes
+        private int tileSize = 32;
+
+        //Player Information
+        private Player player; //Player
+        private Rectangle position; //Player position
+        private int playerSpeed = 3;
+
+        //Assets & Fonts
+        private Texture2D playerAsset;
+        #endregion
 
         public Game1()
         {
@@ -18,7 +35,11 @@ namespace Siam
 
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
+            // Set Temp Game Size
+            _graphics.PreferredBackBufferWidth = 1920;
+            _graphics.PreferredBackBufferHeight = 1080;
+            _graphics.IsFullScreen = false;
+            _graphics.ApplyChanges();
 
             base.Initialize();
         }
@@ -27,7 +48,17 @@ namespace Siam
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            // TODO: use this.Content to load your game content here
+            //Loading Asset Images
+            playerAsset = Content.Load<Texture2D>("eye");
+
+            // Sets the max x and y values for borders
+            maxX = _graphics.PreferredBackBufferWidth - tileSize;
+            maxY = _graphics.PreferredBackBufferHeight - tileSize;
+
+            //Temp position and Player
+            position = new Rectangle(tileSize, tileSize, tileSize, tileSize);
+            player = new Player(maxX, maxY, playerAsset, position, playerSpeed);
+
         }
 
         protected override void Update(GameTime gameTime)
@@ -36,6 +67,7 @@ namespace Siam
                 Exit();
 
             // TODO: Add your update logic here
+            player.Update(gameTime);
 
             base.Update(gameTime);
         }
@@ -44,7 +76,11 @@ namespace Siam
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            // TODO: Add your drawing code here
+            _spriteBatch.Begin(); //Starts drawing
+
+            player.Draw(_spriteBatch);
+
+            _spriteBatch.End(); //Ends drawing
 
             base.Draw(gameTime);
         }
