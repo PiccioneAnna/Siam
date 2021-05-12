@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "rnazwFOE/OO4R+uKe8kzFB8w6NLLpMt3FXKCD0tVsM2YCDeY91WGDEd7q47s+IJcPRM82g4T2NRVstzxs+Spvg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\flash\\source\\repos\\Siam\\Siam\\Siam.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\flash\\.nuget\\packages\\monogame.content.builder.task\\3.8.0.1641\\monogame.content.builder.task.3.8.0.1641.nupkg.sha512",
+    "C:\\Users\\flash\\.nuget\\packages\\monogame.framework.desktopgl\\3.8.0.1641\\monogame.framework.desktopgl.3.8.0.1641.nupkg.sha512"
+  ],
+  "logs": []
+}
