@@ -49,14 +49,14 @@ namespace Siam
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
             //Loading Asset Images
-            playerAsset = Content.Load<Texture2D>("eye");
+            playerAsset = Content.Load<Texture2D>("BetaGirl");
 
             // Sets the max x and y values for borders
             maxX = _graphics.PreferredBackBufferWidth - tileSize;
-            maxY = _graphics.PreferredBackBufferHeight - tileSize;
+            maxY = _graphics.PreferredBackBufferHeight - tileSize * 2;
 
             //Temp position and Player
-            position = new Rectangle(tileSize, tileSize, tileSize, tileSize);
+            position = new Rectangle(tileSize, tileSize, tileSize, tileSize *2);
             player = new Player(maxX, maxY, playerAsset, position, playerSpeed);
 
         }

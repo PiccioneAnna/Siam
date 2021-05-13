@@ -29,6 +29,14 @@ namespace Siam
             get { return position; }
             set { this.position = value; }
         }
+
+        /// <summary>
+        /// Property to access the given asset of an object
+        /// </summary>
+        public Texture2D Asset
+        {
+            get { return asset; }
+        }
         #endregion
 
         // Constructor that sets the asset image and position
