@@ -12,10 +12,10 @@ namespace Siam
     /// </summary>
     enum PlayerState
     {
-        FaceLeft,
         WalkLeft,
-        FaceRight,
         WalkRight,
+        WalkStraight,
+        WalkBack,
         Standing,
     }
 
@@ -33,7 +33,7 @@ namespace Siam
         double fps;             //Animation Speed
         double timePerFrame;    //Amount of time per frame
 
-        //Constants for the source rectangle insidde of the spritesheet
+        //Constants for the source rectangle inside of the spritesheet
         const int idleStandingFrames = 2;   //Number of frames in idle standing state
 
         #endregion
@@ -48,7 +48,7 @@ namespace Siam
             this.state = PlayerState.Standing;
 
             //Initializes
-            fps = 2.0;
+            fps = 3.0;
             timePerFrame = 1.0 / fps;
         }
 
@@ -86,51 +86,66 @@ namespace Siam
             }
         }
 
-        #region Player Animations
         /// <summary>
-        /// Draws the player idle animation
+        /// Draws the player
         /// </summary>
-        private void DrawStanding(SpriteEffects flipSprite, SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch sb)
         {
-            spriteBatch.Draw(
-                Asset,
-                new Vector2(Position.X, Position.Y), new Rectangle(frame * Position.Width, 0, Position.Width, Position.Height),
-                Color.White,
-                0,              //Rotation
-                Vector2.Zero,   //Origin inside the image (top left)
-                1.0f,           //Scale (No Change, 100%)
-                flipSprite,
-                0);             //Layer Depth (Unused)
-        }
+            //Determines what to draw based on what state the player is in
+            switch (state)
+            {
+                case PlayerState.WalkLeft:
+                    AnimateSprite(new Rectangle(frame * Position.Width, Position.Height*4, Position.Width, Position.Height), SpriteEffects.None, sb);
+                    break;
+                case PlayerState.WalkRight:
+                    AnimateSprite(new Rectangle(frame * Position.Width, Position.Height*3, Position.Width, Position.Height), SpriteEffects.None, sb);
+                    break;
+                case PlayerState.WalkStraight:
+                    AnimateSprite(new Rectangle(frame * Position.Width, Position.Height, Position.Width, Position.Height), SpriteEffects.None, sb);
+                    break;
+                case PlayerState.WalkBack:
+                    AnimateSprite(new Rectangle(frame * Position.Width, Position.Height*2, Position.Width, Position.Height), SpriteEffects.None, sb);
+                    break;
+                case PlayerState.Standing:
+                    AnimateSprite(new Rectangle(frame * Position.Width, 0, Position.Width, Position.Height), SpriteEffects.None, sb);
+                    break;
+                default:
+                    break;
+            }
 
-        public override void Draw(SpriteBatch sb)
-        {
-            DrawStanding(SpriteEffects.None, sb);
-        }
 
-        #endregion
+
+        }
 
         /// <summary>
         /// Based on the current keyboard states and keys pressed, determines player movements/interactions
         /// </summary>
         private void PlayerMovement(KeyboardState kbState)
         {
+            //Default state of standing
+            state = PlayerState.Standing;
+
             // Takes player input in 8 directional movement
+
             if (kbState.IsKeyDown(Keys.Left) || kbState.IsKeyDown(Keys.A))
             {
                 position.X -= moveSpeed;
+                state = PlayerState.WalkLeft;
             }
             if (kbState.IsKeyDown(Keys.Right) || kbState.IsKeyDown(Keys.D))
             {
                 position.X += moveSpeed;
+                state = PlayerState.WalkRight;
             }
             if (kbState.IsKeyDown(Keys.Down) || kbState.IsKeyDown(Keys.S))
             {
                 position.Y += moveSpeed;
+                state = PlayerState.WalkStraight;
             }
             if (kbState.IsKeyDown(Keys.Up) || kbState.IsKeyDown(Keys.W))
             {
                 position.Y -= moveSpeed;
+                state = PlayerState.WalkBack;
             }
 
             // Simulates running by multiplying the speed by half of itself

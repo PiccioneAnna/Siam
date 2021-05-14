@@ -22,3 +22,5 @@ C:\Users\flash\Source\Repos\Siam\Siam\obj\Debug\netcoreapp3.1\Siam.dll
 C:\Users\flash\Source\Repos\Siam\Siam\obj\Debug\netcoreapp3.1\Siam.pdb
 C:\Users\flash\Source\Repos\Siam\Siam\obj\Debug\netcoreapp3.1\Siam.genruntimeconfig.cache
 C:\Users\flash\source\repos\Siam\Siam\bin\Debug\netcoreapp3.1\Content\BetaGirl.xnb
+C:\Users\flash\source\repos\Siam\Siam\bin\Debug\netcoreapp3.1\Content\BetaSheet.xnb
+C:\Users\flash\source\repos\Siam\Siam\bin\Debug\netcoreapp3.1\Content\BetaSheetBetter.xnb

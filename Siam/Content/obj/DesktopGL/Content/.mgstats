@@ -1,2 +1,4 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
 "C:/Users/flash/source/repos/Siam/Siam/Content/BetaGirl.png","C:/Users/flash/source/repos/Siam/Siam/Content/bin/DesktopGL/Content/BetaGirl.xnb","TextureProcessor","Texture2DContent",1791,16469,0.1723574
+"C:/Users/flash/source/repos/Siam/Siam/Content/BetaSheet.png","C:/Users/flash/source/repos/Siam/Siam/Content/bin/DesktopGL/Content/BetaSheet.xnb","TextureProcessor","Texture2DContent",3630,49237,0.1723888
+"C:/Users/flash/source/repos/Siam/Siam/Content/BetaSheetBetter.png","C:/Users/flash/source/repos/Siam/Siam/Content/bin/DesktopGL/Content/BetaSheetBetter.xnb","TextureProcessor","Texture2DContent",6672,82005,0.1595212

@@ -30,17 +30,11 @@ namespace Siam
             set { this.position = value; }
         }
 
-        /// <summary>
-        /// Property to access the given asset of an object
-        /// </summary>
-        public Texture2D Asset
-        {
-            get { return asset; }
-        }
         #endregion
 
-        // Constructor that sets the asset image and position
-        // Position is based on a rectangle and the image is based upon a texture2D
+        /// <summary>
+        /// Gameobject defines a sprite/object that exists within the game with properties/functions
+        /// </summary>
         protected GameObject(int width, int height, Texture2D asset, Rectangle position, int moveSpeed)
         {
             windowWidth = width;
@@ -50,10 +44,21 @@ namespace Siam
             this.moveSpeed = moveSpeed;
         }
 
-        // Virtual method to draw out the asset 
-        public virtual void Draw(SpriteBatch sb)
+        /// <summary>
+        /// Draws sprite animation
+        /// </summary>
+        public void AnimateSprite(Rectangle sheetRectangle, SpriteEffects flipSprite, SpriteBatch spriteBatch)
         {
-            sb.Draw(asset, Position, Color.White);
+            spriteBatch.Draw(
+                asset,
+                new Vector2(position.X, position.Y), 
+                sheetRectangle,
+                Color.White,
+                0,              //Rotation
+                Vector2.Zero,   //Origin inside the image (top left)
+                1.0f,           //Scale (No Change, 100%)
+                flipSprite,
+                0);             //Layer Depth (Unused)
         }
 
         public abstract void Update(GameTime gameTime);

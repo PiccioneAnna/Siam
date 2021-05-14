@@ -5,8 +5,12 @@
   <Config />
   <SourceFiles>
     <File>C:/Users/flash/source/repos/Siam/Siam/Content/BetaGirl.png</File>
+    <File>C:/Users/flash/source/repos/Siam/Siam/Content/BetaSheet.png</File>
+    <File>C:/Users/flash/source/repos/Siam/Siam/Content/BetaSheetBetter.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
   </DestFiles>
 </SourceFileCollection>

@@ -20,7 +20,7 @@ namespace Siam
         //Player Information
         private Player player; //Player
         private Rectangle position; //Player position
-        private int playerSpeed = 3;
+        private int playerSpeed = 2;
 
         //Assets & Fonts
         private Texture2D playerAsset;
@@ -49,7 +49,7 @@ namespace Siam
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
             //Loading Asset Images
-            playerAsset = Content.Load<Texture2D>("BetaGirl");
+            playerAsset = Content.Load<Texture2D>("BetaSheetBetter");
 
             // Sets the max x and y values for borders
             maxX = _graphics.PreferredBackBufferWidth - tileSize;
